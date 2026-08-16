@@ -5,9 +5,11 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SITE } from "@/lib/constants";
 import { Menu, X, ChevronDown, ShieldCheck } from "lucide-react";
 import { services } from "@/data/services";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 type NavLink = { label: string; href: string };
 
@@ -80,19 +82,51 @@ export default function MobileNav({ navLinks }: { navLinks: NavLink[] }) {
               padding: "20px",
             }}
           >
-            <div className="mb-5 flex items-center justify-between border-b border-border/40 pb-4">
-              <span className="flex items-center gap-2 font-display text-base font-bold text-text">
-                <ShieldCheck className="h-5 w-5 text-primary-light" aria-hidden="true" />
-                Menu
+        <div className="mb-6 flex items-center justify-between">
+          <div className="flex flex-col">
+            <span className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-text-muted">
+              Menu
+            </span>
+            <span className="flex items-center gap-2 font-display text-base font-bold text-text">
+              <span className="relative flex h-7 w-7 items-center justify-center overflow-hidden rounded-full">
+                <Image
+                  src="/logo.png"
+                  alt={SITE.name}
+                  fill
+                  className="scale-[2.2] object-cover"
+                />
               </span>
-              <button
-                onClick={closeMenu}
-                aria-label="Close menu"
-                className="rounded-full border border-border/60 p-1.5 text-text-muted hover:border-primary-light hover:text-primary-light"
-              >
-                <X className="h-4 w-4" aria-hidden="true" />
-              </button>
-            </div>
+              <span className="relative inline-flex flex-col leading-none">
+                {SITE.name}
+                <span className="mt-1 flex w-full items-center gap-1">
+                  <motion.span
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+                    style={{ transformOrigin: "left" }}
+                    className="h-[2px] flex-1 rounded-full bg-gradient-to-r from-orange-400 to-transparent"
+                    aria-hidden="true"
+                  />
+                  <motion.span
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 1.0 }}
+                    className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"
+                    aria-hidden="true"
+                  />
+                </span>
+              </span>
+            </span>
+          </div>
+
+          <button
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+            className="rounded-full border border-border/60 p-1.5 text-text-muted hover:border-primary-light hover:text-primary-light"
+          >
+            <X className="h-4 w-4" aria-hidden="true" />
+          </button>
+        </div>
 
             <div className="flex flex-col gap-1">
               {navLinks.map((link) =>

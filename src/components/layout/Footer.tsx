@@ -3,6 +3,7 @@ import { ShieldCheck, Phone, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { services } from "@/data/services";
 import { SITE, CONTACT } from "@/lib/constants";
+import Image from "next/image";
 
 function LinkedinIcon() {
   return (
@@ -42,10 +43,18 @@ export default function Footer() {
     <footer className="border-t border-border bg-surface">
       <Container className="grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-text">
-            <ShieldCheck className="h-6 w-6 text-primary-light" aria-hidden="true" />
-            {SITE.name}
-          </Link>
+        <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-text">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white p-1 shadow-sm">
+            <Image
+              src="/logo.png"
+              alt={SITE.name}
+              width={28}
+              height={28}
+              className="h-full w-full object-contain"
+            />
+          </span>
+          {SITE.name}
+        </Link>
           <p className="mt-4 text-sm leading-relaxed text-text-muted">
             {SITE.company} delivers enterprise-grade device security and mobile device management solutions — remote locking, tracking, and fleet management for businesses.
           </p>

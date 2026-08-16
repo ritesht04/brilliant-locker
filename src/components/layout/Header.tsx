@@ -9,7 +9,8 @@ import Button from "@/components/ui/Button";
 import MobileNav from "@/components/layout/MobileNav";
 import { services } from "@/data/services";
 import { SITE } from "@/lib/constants";
-
+import Image from "next/image";
+import { motion } from "framer-motion";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -27,11 +28,51 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/90 backdrop-blur-md">
       <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-text">
-          <ShieldCheck className="h-6 w-6 text-primary-light" aria-hidden="true" />
+        {/* <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-text">
+       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white p-1 shadow-sm">
+      <Image
+        src="/logo.png"
+        alt={SITE.name}
+        width={32}
+        height={32}
+        className="h-full w-full object-contain"
+        priority
+      />
+    </span>
+    {SITE.name}
+      </Link> */}
+    <Link href="/" className="group flex items-center gap-2 font-display text-lg font-bold text-text">
+      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white p-1 shadow-sm">
+        <Image
+          src="/logo.png"
+          alt={SITE.name}
+          width={32}
+          height={32}
+          className="h-full w-full object-contain"
+          priority
+        />
+      </span>
+        <span className="relative inline-flex flex-col leading-none">
           {SITE.name}
-        </Link>
-
+          <span className="mt-1.5 flex w-full items-center gap-1">
+            <motion.span
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+              style={{ transformOrigin: "left" }}
+              className="h-[2px] flex-1 rounded-full bg-gradient-to-r from-orange-400 to-transparent"
+              aria-hidden="true"
+            />
+            <motion.span
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 1.0 }}
+              className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"
+              aria-hidden="true"
+            />
+          </span>
+        </span>
+    </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {navLinks.map((link) =>
             link.label === "Services" ? (
