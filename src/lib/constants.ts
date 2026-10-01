@@ -1,6 +1,6 @@
 export const SITE = {
-  name: "Brilliant Locker",
-  company: "BRILLIANT SECURE INFOSOFT LLP",
+  name: "Divine pay locker",
+  company: "Divine pay locker",
   tagline: "Enterprise Device Security & Mobile Device Management",
   url: "https://brilliantlocker.example.com", // apna final domain baad me daal dena
 };
