@@ -6,11 +6,11 @@ export const SITE = {
 };
 
 export const CONTACT = {
-  phone: "9755655975",
-  phoneDisplay: "+91 97556 55975",
-  phoneHref: "tel:+919755655975",
-  whatsappNumber: "919755655975",
-  whatsappHref: "https://wa.me/919755655975",
+  phone: "7898909708",
+  phoneDisplay: "+91 78989 09708",
+  phoneHref: "tel:+917898909708",
+  whatsappNumber: "917898909708",
+  whatsappHref: "https://wa.me/917898909708",
   email: "", // agar business email ho to yahan daal dena
   address: {
     line1: "Ash-12, Bapat Square",
