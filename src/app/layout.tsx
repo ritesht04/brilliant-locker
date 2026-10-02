@@ -4,7 +4,14 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/shared/FloatingActions";
-import { SITE } from "@/lib/constants";
+import JsonLd from "@/components/seo/JsonLd";
+
+const SITE_URL = "https://divinepaylocker.in";
+const SITE_NAME = "Divine Pay Locker";
+const SITE_TITLE =
+  "Divine Pay Locker | EMI Locker App & Mobile Device Locking Software India";
+const SITE_DESC =
+  "Divine Pay Locker is an EMI locker and mobile device management (MDM) solution. Remotely lock phones, track devices, and protect your EMI mobile sales. Based in Indore, serving all India.";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -21,26 +28,52 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE.name} — ${SITE.tagline}`,
-    template: `%s | ${SITE.name}`,
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Brilliant Locker by BRILLIANT SECURE INFOSOFT LLP delivers enterprise-grade Android & Apple MDM, remote device locking, GPS tracking, and remote data wipe for secure device fleet management.",
-  keywords: ["MDM", "Mobile Device Management", "Android MDM", "Apple MDM", "remote device lock", "device tracking", "Brilliant Locker"],
+  description: SITE_DESC,
+  keywords: [
+    "Divine Pay Locker",
+    "Divine Locker",
+    "Pay Locker",
+    "EMI Locker",
+    "EMI Locker App",
+    "Mobile Locker App",
+    "EMI Mobile Lock",
+    "Remote Mobile Lock",
+    "Android MDM India",
+    "EMI Locker Indore",
+  ],
+  applicationName: SITE_NAME,
+  authors: [{ name: "Brilliant Secure Infosoft LLP" }],
+  creator: "Brilliant Secure Infosoft LLP",
+  publisher: "Brilliant Secure Infosoft LLP",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: SITE.name,
-    title: `${SITE.name} — ${SITE.tagline}`,
-    description: "Enterprise-grade device security and MDM solutions — remote locking, tracking, and fleet management.",
-    url: SITE.url,
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    url: SITE_URL,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Divine Pay Locker - EMI Locker App & Mobile Device Locking Software",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — ${SITE.tagline}`,
-    description: "Enterprise-grade device security and MDM solutions — remote locking, tracking, and fleet management.",
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -54,8 +87,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+      <html
+      lang="en-IN"
+      data-scroll-behavior="smooth"
+      className={`${sora.variable} ${inter.variable}`}>
       <body className="antialiased">
+        <JsonLd />
         <Header />
         <main>{children}</main>
         <Footer />

@@ -7,8 +7,9 @@ import Button from "@/components/ui/Button";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: `Learn about ${SITE.company} — a full-stack IT company delivering device security, MDM, and mobile development solutions since 2023.`,
+  title: "About Us – EMI Locker & MDM Company in Indore",
+  description: `Divine Pay Locker is built by ${SITE.company}, Indore. Learn about our EMI locker and mobile device management (MDM) solutions for mobile retailers across India.`,
+  alternates: { canonical: "/about" },
 };
 
 const values = [
@@ -16,19 +17,19 @@ const values = [
     icon: Target,
     title: "Our Mission",
     description:
-      "To help businesses secure and manage their device fleets with reliable, enterprise-grade technology — without unnecessary complexity.",
+      "To help mobile retailers and businesses secure their EMI devices and manage device fleets with reliable, enterprise-grade technology, without unnecessary complexity.",
   },
   {
     icon: Eye,
     title: "Our Vision",
     description:
-      "To become a trusted device security partner for growing businesses across India, known for reliability and technical excellence.",
+      "To become a trusted EMI locker and device security partner for growing businesses across India, known for reliability and technical excellence.",
   },
   {
     icon: Users,
     title: "Our Approach",
     description:
-      "Transparent communication, agile delivery, and long-term support — we treat every client engagement as a partnership, not a transaction.",
+      "Transparent communication, agile delivery, and long-term support. We treat every client engagement as a partnership, not a transaction.",
   },
 ];
 
@@ -42,12 +43,12 @@ export default function AboutPage() {
             About Us
           </div>
           <h1 className="mx-auto max-w-2xl text-4xl font-bold leading-tight text-gradient sm:text-5xl">
-            Your Partner in Device Security
+            About Divine Pay Locker
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-text-muted sm:text-lg">
-            {SITE.company} is a full-stack IT company delivering web,
-            mobile, and enterprise device management solutions for
-            businesses.
+            Divine Pay Locker is an EMI locker and mobile device management
+            solution by {SITE.company}, a full-stack IT company based in
+            Indore.
           </p>
         </Container>
       </section>
@@ -57,7 +58,7 @@ export default function AboutPage() {
           <SectionHeader
             eyebrow="Who We Are"
             title="Building Secure Digital Foundations"
-            description={`${SITE.company} was established in 2023 with a focus on device security, mobile application development, and enterprise mobile device management (MDM). We work with businesses to keep their device fleets secure, tracked, and under control.`}
+            description={`${SITE.company} was established in 2023 with a focus on device security, mobile application development, and enterprise mobile device management (MDM). Through Divine Pay Locker, we help businesses keep their devices secure, tracked, and under control, including EMI-financed mobile phones.`}
           />
         </Container>
       </section>
@@ -89,8 +90,7 @@ export default function AboutPage() {
             Want to Work With Us?
           </h2>
           <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-text-muted sm:text-lg">
-            Let&apos;s discuss how {SITE.name} can help secure your device
-            fleet.
+            Let&apos;s discuss how {SITE.name} can help secure your devices.
           </p>
           <div className="mt-8 flex justify-center">
             <Button href="/contact" size="lg" showArrow>

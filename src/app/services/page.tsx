@@ -11,11 +11,12 @@ import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { services, type Service } from "@/data/services";
-import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description: `Explore ${SITE.company}'s services — Android development, iOS development, Apple MDM, and Android MDM for enterprise device security.`,
+  title: "EMI Locker & MDM Services",
+  description:
+    "EMI mobile lock, remote device locking, Android MDM, Apple MDM and GPS tracking. Explore all Divine Pay Locker services for mobile retailers and businesses.",
+  alternates: { canonical: "/services" },
 };
 
 const iconMap: Record<Service["icon"], typeof Smartphone> = {
@@ -35,11 +36,12 @@ export default function ServicesPage() {
             Our Services
           </div>
           <h1 className="mx-auto max-w-2xl text-4xl font-bold leading-tight text-gradient sm:text-5xl">
-            Development &amp; Device Management, Built Right
+            EMI Locker &amp; Device Management Services
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-text-muted sm:text-lg">
-            From native app development to enterprise MDM, explore how we help
-            businesses build and secure their device fleets.
+            Divine Pay Locker offers EMI mobile lock, remote device locking,
+            Android MDM and Apple MDM to help businesses secure and manage
+            their devices.
           </p>
         </Container>
       </section>
@@ -98,8 +100,8 @@ export default function ServicesPage() {
             Not Sure Which Service You Need?
           </h2>
           <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-text-muted sm:text-lg">
-            Talk to us — we&apos;ll help you figure out the right fit for your
-            business.
+            Talk to us and we&apos;ll help you figure out the right fit for
+            your business.
           </p>
           <div className="mt-8 flex justify-center">
             <Button href="/contact" size="lg" showArrow>

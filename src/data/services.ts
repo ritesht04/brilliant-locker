@@ -10,6 +10,24 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "emi-mobile-lock",
+    title: "EMI Mobile Lock",
+    shortDescription:
+      "Divine Pay Locker EMI locker app to remotely lock and protect EMI-financed mobile phones.",
+    description:
+      "Divine Pay Locker is an EMI locker solution for mobile retailers and finance partners. Remotely lock a device, track its location, and protect your EMI sales from default and device misuse, all from one dashboard.",
+    icon: "shield-alert",
+    features: [
+      "Remote mobile lock and unlock",
+      "GPS device tracking",
+      "Remote data wipe",
+      "App blacklisting",
+      "Bulk device dashboard",
+      "Android EMI locker app",
+    ],
+    featured: true,
+  },
+  {
     slug: "android-development",
     title: "Android Development",
     shortDescription:
